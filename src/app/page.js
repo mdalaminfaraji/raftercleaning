@@ -114,8 +114,8 @@ export default function Home() {
           <Grid
             item
             xs={12}
-            sm={4}
-            md={4}
+            sm={6}
+            // md={4}
             key={uuidv4()}
           >
             <BasicCard {...item} />

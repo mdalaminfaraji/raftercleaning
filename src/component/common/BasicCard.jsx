@@ -25,6 +25,7 @@ const BasicCard = ({ icon, title, price, color }) => {
   return (
     <Card
       sx={{
+        boxShadow: 2,
         borderBottom: "2px solid",
         borderColor: color,
         borderRadius: "5px",
