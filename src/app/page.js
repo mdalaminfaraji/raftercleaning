@@ -1,95 +1,129 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import BasicCard from "@/component/common/BasicCard";
+import ImportantLink from "@/component/common/ImportantLink";
+import { v4 as uuidv4 } from "uuid";
+import {FaBriefcase , FaSackDollar, FaChalkboardUser, FaBagShopping, FaCircleUser} from 'react-icons/fa';
+import { AiFillDollarCircle} from 'react-icons/ai';
+import { BiSolidBadgeDollar, BiCalendar , BiBriefcase} from "react-icons/bi";
+import { IoIosCube } from "react-icons/io";
+import { TbCalendarDollar } from "react-icons/tb";
+import { GrDocumentText } from "react-icons/gr";
+import { MdAssignmentInd} from "react-icons/md";
+import {HiOutlineDesktopComputer} from "react-icons/hi";
+
+import { Box, CardContent, Typography, Grid, Item } from "@mui/material";
 
 export default function Home() {
+  const items = [
+    {
+      icon: "fa6-solid:sack-dollar",
+      title: "Gross Sales ",
+      price: "938458973",
+      color: "#3699FF",
+    },
+    {
+      icon: "bxs:badge-dollar",
+      title: "Total Expense ",
+      price: "938458973",
+      color: "#EFA02A",
+    },
+    {
+      icon: "ri:money-dollar-circle-line",
+      title: "Total  Revenue ",
+      price: "938458973",
+      color: "#27CF33",
+    },
+    {
+      icon: "fluent:briefcase-32-filled",
+      title: "Total Job Average",
+      price: "938458973",
+      color: "#55C0F3",
+    },
+    {
+      icon: "ion:cube",
+      title: "Total Quotes",
+      price: "938458973",
+      color: "#636FF1",
+    },
+    {
+      icon: "solar:calendar-line-duotone",
+      title: "Total Booking",
+      price: "938458973",
+      color: "#F561BB",
+    },
+    {
+      icon: "fa6-solid:chalkboard-user" ,
+      title: "Completed Job",
+      price: "938458973",
+      color: "#F9AD43",
+    },
+    {
+      icon: "mdi:briefcase" ,
+      title: "Cancelled Job",
+      price: "938458973",
+      color: "#FE7979",
+    },
+    {
+      icon: "bxs:shopping-bags"  ,
+      title: "Job in Progress",
+      price: "938458973",
+      color: "#F9956C",
+    },
+    {
+      icon: "tabler:basket-dollar"   ,
+      title: "Upcoming payment",
+      price: "938458973",
+      color: "#FCCE50",
+    },
+    {
+      icon: "carbon:document-signed"   ,
+      title: "Total Invoice",
+      price: "938458973",
+      color: "#AF63FC",
+    },
+    {
+      icon: "fa6-regular:circle-user"    ,
+      title: "Total customer",
+      price: "938458973",
+      color: "#6472FB",
+    },
+    {
+      icon: "fa6-solid:circle-user"   ,
+      title: "Total Provider",
+      price: "938458973",
+      color: "#50F0BD",
+    },
+    {
+      icon: "emojione-monotone:desktop-computer"   ,
+      title: "Average Customer Visit",
+      price: "938458973",
+      color: "#66EC49",
+    },
+ 
+    
+  ];
+  //rowSpacing={1.5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main>
+      <Grid
+        container
+      
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+      >
+        {items.map((item) => (
+          <Grid
+            item
+            xs={12}
+            sm={4}
+            md={4}
+            key={uuidv4()}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+            <BasicCard {...item} />
+          </Grid>
+        ))}
+      </Grid>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <ImportantLink></ImportantLink>
     </main>
-  )
+  );
 }
