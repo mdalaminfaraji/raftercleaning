@@ -11,6 +11,10 @@ import { MdAssignmentInd} from "react-icons/md";
 import {HiOutlineDesktopComputer} from "react-icons/hi";
 
 import { Box, CardContent, Typography, Grid, Item } from "@mui/material";
+import Report from "@/component/common/Report";
+import SellingServices from "@/component/common/SellingServices";
+import PaymentTypes from "@/component/common/PaymentTypes";
+import AreaBooking from "@/component/common/AreaBooking";
 
 export default function Home() {
   const items = [
@@ -103,27 +107,41 @@ export default function Home() {
   ];
   //rowSpacing={1.5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}
   return (
-    <main>
+    <Box container >
       <Grid
         container
-      
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
+        spacing={2}
+        sx={{mx:"auto"}}
       >
-        {items.map((item) => (
+       <Grid container spacing={2} item  xs={8}>
+       {items.map((item) => (
           <Grid
             item
-            xs={12}
             sm={6}
-            // md={4}
             key={uuidv4()}
           >
             <BasicCard {...item} />
           </Grid>
         ))}
-      </Grid>
-
+      
+       </Grid>
+     
+       <Grid  item xs={4}>
       <ImportantLink></ImportantLink>
-    </main>
+      <Report></Report>
+      </Grid>
+      
+     
+      </Grid>
+     
+      <Box>
+        <SellingServices></SellingServices>
+        <PaymentTypes></PaymentTypes>
+        <AreaBooking></AreaBooking>
+       </Box>
+     
+
+    
+    </Box>
   );
 }
